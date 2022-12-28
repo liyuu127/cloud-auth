@@ -1,0 +1,11 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: oauth2-server
+  datasource:
+    url: jdbc:mysql://124.71.56.212:3306/auth?useSSL=false
+    username: root
+    password: Abc123456
+    driver-class-name: com.mysql.jdbc.Driver
