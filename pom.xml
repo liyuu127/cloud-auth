@@ -11,7 +11,8 @@
     <modules>
         <module>auth-client</module>
         <module>auth-server</module>
-        <module>auth-resource-user</module>
+        <module>resource-server</module>
+        <module>login</module>
     </modules>
 
     <properties>
