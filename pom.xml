@@ -6,14 +6,11 @@
     <groupId>cn.liyu</groupId>
     <artifactId>cloud-auth</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>default-authorizationServer</module>
+    </modules>
     <version>1.0.0</version>
 
-    <modules>
-        <module>auth-client</module>
-        <module>auth-server</module>
-        <module>resource-server</module>
-        <module>login</module>
-    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -57,7 +54,14 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-oauth2-authorization-server</artifactId>
+                <version>0.2.3</version>
+            </dependency>
         </dependencies>
+
     </dependencyManagement>
     <build>
         <plugins>
