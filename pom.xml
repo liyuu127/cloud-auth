@@ -8,6 +8,10 @@
     <packaging>pom</packaging>
     <modules>
         <module>default-authorizationServer</module>
+        <module>custom-consent-authorizationServer</module>
+        <module>messages-client</module>
+        <module>messages-resource</module>
+        <module>federated-identity-authorizationserver</module>
     </modules>
     <version>1.0.0</version>
 
