@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.liyu.user.dao.mapper.SysUserOauthMapper">
+  <resultMap id="BaseResultMap" type="cn.liyu.user.dao.entity.SysUserOauth">
+    <!--@mbg.generated-->
+    <!--@Table sys_user_oauth-->
+    <id column="id" property="id" />
+    <result column="user_id" property="userId" />
+    <result column="oauth_type" property="oauthType" />
+    <result column="oauth_id" property="oauthId" />
+    <result column="unionid" property="unionid" />
+    <result column="credential" property="credential" />
+    <result column="create_time" property="createTime" />
+    <result column="update_time" property="updateTime" />
+    <result column="create_user" property="createUser" />
+    <result column="update_user" property="updateUser" />
+    <result column="deleted" property="deleted" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, user_id, oauth_type, oauth_id, unionid, credential, create_time, update_time, 
+    create_user, update_user, deleted
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from sys_user_oauth
+    where id = #{id}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from sys_user_oauth
+    where id = #{id}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.liyu.user.dao.entity.SysUserOauth" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into sys_user_oauth (user_id, oauth_type, oauth_id, unionid, credential, create_time, 
+      update_time, create_user, update_user, deleted)
+    values (#{userId}, #{oauthType}, #{oauthId}, #{unionid}, #{credential}, #{createTime}, 
+      #{updateTime}, #{createUser}, #{updateUser}, #{deleted})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.liyu.user.dao.entity.SysUserOauth" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into sys_user_oauth
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="oauthType != null">
+        oauth_type,
+      </if>
+      <if test="oauthId != null">
+        oauth_id,
+      </if>
+      <if test="unionid != null">
+        unionid,
+      </if>
+      <if test="credential != null">
+        credential,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+      <if test="deleted != null">
+        deleted,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId},
+      </if>
+      <if test="oauthType != null">
+        #{oauthType},
+      </if>
+      <if test="oauthId != null">
+        #{oauthId},
+      </if>
+      <if test="unionid != null">
+        #{unionid},
+      </if>
+      <if test="credential != null">
+        #{credential},
+      </if>
+      <if test="createTime != null">
+        #{createTime},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime},
+      </if>
+      <if test="createUser != null">
+        #{createUser},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser},
+      </if>
+      <if test="deleted != null">
+        #{deleted},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.liyu.user.dao.entity.SysUserOauth">
+    <!--@mbg.generated-->
+    update sys_user_oauth
+    <set>
+      <if test="userId != null">
+        user_id = #{userId},
+      </if>
+      <if test="oauthType != null">
+        oauth_type = #{oauthType},
+      </if>
+      <if test="oauthId != null">
+        oauth_id = #{oauthId},
+      </if>
+      <if test="unionid != null">
+        unionid = #{unionid},
+      </if>
+      <if test="credential != null">
+        credential = #{credential},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser},
+      </if>
+      <if test="deleted != null">
+        deleted = #{deleted},
+      </if>
+    </set>
+    where id = #{id}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.liyu.user.dao.entity.SysUserOauth">
+    <!--@mbg.generated-->
+    update sys_user_oauth
+    set user_id = #{userId},
+      oauth_type = #{oauthType},
+      oauth_id = #{oauthId},
+      unionid = #{unionid},
+      credential = #{credential},
+      create_time = #{createTime},
+      update_time = #{updateTime},
+      create_user = #{createUser},
+      update_user = #{updateUser},
+      deleted = #{deleted}
+    where id = #{id}
+  </update>
+</mapper>

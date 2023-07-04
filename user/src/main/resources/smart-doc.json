@@ -1,0 +1,60 @@
+{
+  "serverUrl": "http://127.0.0.1:8002",
+  "serverEnv": "http://{{ip}}:{{port}}",
+  "pathPrefix": "",
+  "isStrict": false,
+  "allInOne": true,
+  "outPath": "D://doc//auth//user",
+  "coverOld": true,
+  "createDebugPage": true,
+  "packageFilters": "",
+  "md5EncryptedHtmlName": false,
+  "style": "xt256",
+  "projectName": "user",
+  "skipTransientField": true,
+  "sortByTitle": false,
+  "showAuthor": false,
+  "requestFieldToUnderline": false,
+  "responseFieldToUnderline": false,
+  "inlineEnum": true,
+  "recursionLimit": 7,
+  "allInOneDocFileName": "index.html",
+  "requestExample": "true",
+  "responseExample": "true",
+  "ignoreRequestParams": [
+    "org.springframework.ui.ModelMap"
+  ],
+  "errorCodeDictionaries": [
+    {
+      "title": "系统错误",
+      "enumClassName": "cn.liyu.common.core.global.SysStubInfo",
+      "codeField": "code",
+      "descField": "msg"
+    }
+  ],
+  "revisionLogs": [
+    {
+      "version": "1.0",
+      "revisionTime": "2023-05-20 22:12:01",
+      "status": "create",
+      "author": "liyu",
+      "remarks": "init"
+    }
+  ],
+  "customResponseFields": [
+    {
+      "name": "code",
+      "desc": "响应代码",
+      "ownerClassName": "org.springframework.data.domain.Pageable",
+      "ignore": true,
+      "value": "00000"
+    }
+  ],
+  "requestHeaders": [],
+  "requestParams": [],
+  "responseBodyAdvice": {
+    "className": "cn.liyu.common.core.model.ResponseData"
+  },
+  "requestParamsTable": true,
+  "responseParamsTable": true
+}
