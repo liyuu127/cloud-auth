@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * date 2022/4/7 16:15
  * description
  */
-@FeignClient(contextId = "userRemoteClient", value = "127.0.0.1:8003", path = "/user", fallbackFactory = UserRemoteFallbackFactory.class)
+@FeignClient(contextId = "userRemoteClient",value ="UserRemoteClient", url = "127.0.0.1:8003", path = "/user", fallbackFactory = UserRemoteFallbackFactory.class)
 public interface UserRemoteClient {
 
 
@@ -21,7 +21,7 @@ public interface UserRemoteClient {
      *
      * @return UserInfo
      */
-    @GetMapping("/login/info")
+    @GetMapping("/")
     public ResponseData<UserInfo> oneUser(@RequestParam(value = "userId", required = false) Long userId,
                                           @RequestParam(value = "loginName", required = false) String loginName);
 }

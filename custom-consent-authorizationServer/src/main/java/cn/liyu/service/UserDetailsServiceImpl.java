@@ -16,6 +16,8 @@ import org.springframework.util.CollectionUtils;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static cn.liyu.common.auth.constant.SecurityConstant.PASSWORD_ENCODER_NOOP;
+
 /**
  * @author liyu
  * date 2023/7/4 18:44
@@ -75,8 +77,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         Collection<? extends GrantedAuthority> authorityList = AuthorityUtils.createAuthorityList(permissionCode.toArray(new String[0]));
         return SecurityUser.builder()
                 .userId(user.getId())
+                .username(user.getLoginName())
                 .state(user.getState())
-                .password(user.getPassword())
+                .password(PASSWORD_ENCODER_NOOP + user.getPassword())//暂时使用明文形式密码
                 .authorities(authorityList)
                 .build();
     }

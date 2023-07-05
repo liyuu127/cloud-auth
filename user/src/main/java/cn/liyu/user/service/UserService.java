@@ -93,7 +93,7 @@ public class UserService {
         userInfo.setUserExtend(userExtendService.selectOneByUserId(userId));
 
         //角色code mock
-        List<String> roleScope = Arrays.asList("admin", "normal");
+        List<String> roleScope = Arrays.asList("admin", "normal", "USER");
         userInfo.setRoleScope(roleScope);
 
         //权限code mock

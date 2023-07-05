@@ -79,7 +79,7 @@ public class SecurityUser implements UserDetails {
      */
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     /**
@@ -90,7 +90,7 @@ public class SecurityUser implements UserDetails {
      */
     @Override
     public boolean isAccountNonLocked() {
-        return Objects.equals(state, USER_ACCOUNT_STATE_LOCKED);
+        return !Objects.equals(state, USER_ACCOUNT_STATE_LOCKED);
     }
 
     /**
@@ -102,7 +102,7 @@ public class SecurityUser implements UserDetails {
      */
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     /**
