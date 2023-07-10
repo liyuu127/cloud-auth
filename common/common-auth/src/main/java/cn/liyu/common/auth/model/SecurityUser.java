@@ -1,12 +1,13 @@
 package cn.liyu.common.auth.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.Objects;
-import java.util.Set;
 
 import static cn.liyu.common.auth.constant.SecurityConstant.USER_ACCOUNT_STATE_ACTIVATED;
 import static cn.liyu.common.auth.constant.SecurityConstant.USER_ACCOUNT_STATE_LOCKED;
@@ -17,19 +18,13 @@ import static cn.liyu.common.auth.constant.SecurityConstant.USER_ACCOUNT_STATE_L
  * description:
  */
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class SecurityUser implements UserDetails {
-    public SecurityUser() {
-    }
 
-    public SecurityUser(Long userId, String password, String username, Integer state, Collection<? extends GrantedAuthority> authorities) {
-        this.userId = userId;
-        this.password = password;
-        this.username = username;
-        this.state = state;
-        this.authorities = authorities;
-    }
 
     private Long userId;
+    private Long tenantId;
     private String password;
 
     private String username;
